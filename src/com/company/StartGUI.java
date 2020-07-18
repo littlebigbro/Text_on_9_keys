@@ -25,8 +25,8 @@ public class StartGUI {
             new ImageIcon("H:\\Java\\Text_on_9_keys\\pics\\0.png"),
             new ImageIcon("H:\\Java\\Text_on_9_keys\\pics\\lattice.png"),
             new ImageIcon("H:\\Java\\Text_on_9_keys\\pics\\clear.png"),
-            new ImageIcon("H:\\Java\\Text_on_9_keys\\pics\\enter.png"),
-            new ImageIcon("H:\\Java\\Text_on_9_keys\\pics\\backspace.png")
+            new ImageIcon("H:\\Java\\Text_on_9_keys\\pics\\backspace.png"),
+            new ImageIcon("H:\\Java\\Text_on_9_keys\\pics\\enter.png")
     };
     private final String[] valuesOfButton0 = {"+","=","<",">","$","%","0"};
     private final String[] valuesOfButton1 = {".",",","-","?","!","@","(",")","/","1"};
