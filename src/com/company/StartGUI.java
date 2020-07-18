@@ -11,6 +11,23 @@ import java.util.Optional;
 
 public class StartGUI {
     private final String[] buttonsName = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "*", "0","#","Clear","Backspace", "Enter"};
+    private final ImageIcon[] buttonsIcon = {
+            new ImageIcon("H:\\Java\\Text_on_9_keys\\pics\\1.png"),
+            new ImageIcon("H:\\Java\\Text_on_9_keys\\pics\\2.png"),
+            new ImageIcon("H:\\Java\\Text_on_9_keys\\pics\\3.png"),
+            new ImageIcon("H:\\Java\\Text_on_9_keys\\pics\\4.png"),
+            new ImageIcon("H:\\Java\\Text_on_9_keys\\pics\\5.png"),
+            new ImageIcon("H:\\Java\\Text_on_9_keys\\pics\\6.png"),
+            new ImageIcon("H:\\Java\\Text_on_9_keys\\pics\\7.png"),
+            new ImageIcon("H:\\Java\\Text_on_9_keys\\pics\\8.png"),
+            new ImageIcon("H:\\Java\\Text_on_9_keys\\pics\\9.png"),
+            new ImageIcon("H:\\Java\\Text_on_9_keys\\pics\\star.png"),
+            new ImageIcon("H:\\Java\\Text_on_9_keys\\pics\\0.png"),
+            new ImageIcon("H:\\Java\\Text_on_9_keys\\pics\\lattice.png"),
+            new ImageIcon("H:\\Java\\Text_on_9_keys\\pics\\clear.png"),
+            new ImageIcon("H:\\Java\\Text_on_9_keys\\pics\\enter.png"),
+            new ImageIcon("H:\\Java\\Text_on_9_keys\\pics\\backspace.png")
+    };
     private final String[] valuesOfButton0 = {"+","=","<",">","$","%","0"};
     private final String[] valuesOfButton1 = {".",",","-","?","!","@","(",")","/","1"};
     private final String[] valuesOfButton2 = {"а","б","в","г","2"};
@@ -64,10 +81,11 @@ public class StartGUI {
         JPanel menuPanel = new JPanel();
         menuPanel.setPreferredSize(new Dimension(287,219));
         menuPanel.setLayout(new GridBagLayout());
-        menuPanel.setBackground(Color.pink);
+        menuPanel.setBackground(Color.BLACK);
         menuPanel.setVisible(true);
 
         JLabel mobileLabel = new JLabel("NOKLA");
+        mobileLabel.setBackground(Color.ORANGE);
         menuPanel.add(mobileLabel, new GridBagConstraints(
                 0, 0, 2, 1, 2,1,
                 GridBagConstraints.CENTER, GridBagConstraints.CENTER,
@@ -82,8 +100,7 @@ public class StartGUI {
         typeMode.setVisible(true);
 
         message = new JEditorPane();
-        message.setPreferredSize(new Dimension(270, 100));
-
+        message.setPreferredSize(new Dimension(274, 100));
         menuPanel.add(message, new GridBagConstraints(
                 0, 1, 3, 2, 3,2,
                 GridBagConstraints.CENTER, GridBagConstraints.CENTER,
@@ -103,6 +120,7 @@ public class StartGUI {
                     ActionListener b1 = new ButtonListener(buttons[i][j].getText(), buttonsParams.get(buttons[i][j].getText()));
                     buttons[i][j].addActionListener(b1);
                 }
+                buttons[i][j].setIcon(buttonsIcon[buttonsNameK]);
                 menuPanel.add(buttons[i][j],
                         new GridBagConstraints(
                                 j, i + dY, 1, 1, 1,1,
@@ -112,6 +130,8 @@ public class StartGUI {
                 buttonsNameK++;
             }
         }
+        frame.setResizable(false);
+        frame.validate();
         frame.add(menuPanel);
         frame.setLocationRelativeTo(null);
         frame.setFocusable(true);
