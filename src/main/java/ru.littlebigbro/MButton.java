@@ -1,4 +1,4 @@
-package com.company;
+package ru.littlebigbro;
 
 import javax.swing.*;
 
@@ -6,11 +6,13 @@ public class MButton {
     private String name;
     private String[] values;
     private ImageIcon icon;
+    private final ActionContext actionContext;
 
     public MButton(String name, String[] values, ImageIcon icon) {
         this.name = name;
         this.values = values;
         this.icon = icon;
+        actionContext = new ActionContext();
     }
 
     public String getName() {
@@ -35,5 +37,9 @@ public class MButton {
 
     public void setIcon(ImageIcon icon) {
         this.icon = icon;
+    }
+
+    public ActionContext getActionContext() {
+        return actionContext;
     }
 }
